@@ -52,6 +52,20 @@ fn print_no_command_help() -> Result<()> {
     Ok(())
 }
 
+#[derive(Parser, Debug)]
+struct Cli {
+    #[arg(long, global = true)]
+    config_dir: Option<String>,
+
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Subcommand, Debug)]
+enum Commands {
+    
+}
+
 #[tokio::main]
 #[allow(clippy::too_many_lines)]
 async fn main() -> Result<()> {
