@@ -35,7 +35,8 @@
     unused_imports
 )]
 
-use anyhow::{Context, Result, bail};
+use anyhow::Result;
+use clap::{Parser, Subcommand};
 
 fn print_no_command_help() -> Result<()> {
     println!("No command provided.");
@@ -62,21 +63,14 @@ struct Cli {
 }
 
 #[derive(Subcommand, Debug)]
-enum Commands {
-    
-}
+enum Commands {}
 
 #[tokio::main]
 #[allow(clippy::too_many_lines)]
 async fn main() -> Result<()> {
-    #[cfg(feature = "agent-runtime")]
-    if let Err(e) = rustls::crypto::ring::default_provider().install_default() {
-        eprintln!("Warning: Failed to install default crypto provider: {e:?}")
-    }
-
     if std::env::args_os().len() <= 1 {
         return print_no_command_help();
     }
 
-    return Ok(())
+    return Ok(());
 }

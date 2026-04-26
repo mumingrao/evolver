@@ -1,0 +1,10 @@
+[package]
+name = "evolver-runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Miscellaneous Evolver subsystems: security, observability, gateway, cron, SOP, skills, hardware, TUI, and more."
+publish = false
+
+[dependencies]
+evolver-api.workspace = true

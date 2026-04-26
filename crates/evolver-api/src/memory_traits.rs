@@ -41,7 +41,7 @@ fn default_namespace() -> String {
 
 impl std::fmt::Debug for MemoryEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-         f.debug_struct("MemoryEntry")
+        f.debug_struct("MemoryEntry")
             .field("id", &self.id)
             .field("key", &self.key)
             .field("content", &self.content)
@@ -172,7 +172,7 @@ pub trait Memory: Send + Sync {
         let filtered = entries
             .into_iter()
             .filter(|e| {
-                if let Some(ref ns) == filter.namespace
+                if let Some(ref ns) = filter.namespace
                     && e.namespace != *ns
                 {
                     return false;

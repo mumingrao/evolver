@@ -1,4 +1,4 @@
-#[deerive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum MediaKind {
     Audio,
     Image,

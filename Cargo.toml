@@ -11,7 +11,7 @@ rust-version = "1.87"
 
 [workspace.dependencies]
 evolver-api = { path = "crates/evolver-api", version = "0.1.0" }
-zeroclaw-runtime = { path = "crates/evolver-runtime", version = "0.1.0", default-features = false }
+evolver-runtime = { path = "crates/evolver-runtime", version = "0.1.0", default-features = false }
 
 [package]
 name = "evolverlabs"
@@ -28,5 +28,8 @@ name = "evolver"
 path = "src/lib.rs"
 
 [dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
 evolver-api.workspace = true
 evolver-runtime.workspace = true
+tokio = { version = "1.50", features = ["macros", "rt-multi-thread"] }
